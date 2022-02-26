@@ -15,20 +15,6 @@ function Home({ data }) {
   const [Questions, setQuestions] = useState();
   const [deatils1, setdeatils] = useState();
 
-  function clickQuestion() {
-    axios
-      .post("https://ask-over.herokuapp.com/questionpost", {
-        Name: Questions,
-
-        Summary: deatils1,
-
-        // username: this.props.sign.displayName,
-        // useremail: this.props.sign.email,
-      })
-      .then(() => {
-        window.location.reload();
-      });
-  }
   function question(e) {
     setQuestions(e.target.value);
     // this.setState({ ask: e.target.value });
@@ -94,7 +80,6 @@ function Home({ data }) {
           <Button
             type="submit"
             disabled={!deatils1 || !Questions}
-            onClick={clickQuestion}
             variant="outline-secondary"
             id="button-addon2"
           >
